@@ -17,14 +17,15 @@ if (IS_DEV) {
     bundleIdentifier = "com.neonkingkong.expodetoxbranch"
     androidPackage = "com.neonkingkong.expodetoxbranch"
 } else {
-    scheme = 'expodetoxbranch-dx'
-    bundleIdentifier = "com.neonkingkong.expodetoxbranch.dx"
-    androidPackage = "com.neonkingkong.expodetoxbranch.dx"
+    // TODO: Maybe one day I'll find a way to add a Detox configuration here
+    scheme = 'expodetoxbranch'
+    bundleIdentifier = "com.neonkingkong.expodetoxbranch"
+    androidPackage = "com.neonkingkong.expodetoxbranch"
 }
 
 const appConfig = {
     "expo": {
-        "name": "expo-detox-branch",
+        name: process.env.EXPO_PUBLIC_APP_NAME ?? "EDB DX",
         "slug": "expo-detox-branch",
         "version": "1.0.0",
         "orientation": "portrait",
