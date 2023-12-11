@@ -8,10 +8,14 @@ describe("When requesting a password reset", () => {
         });
 
         it('should show token as undefined', async () => {
-            await waitFor(element(by.text("Reset password"))).toBeVisible().withTimeout(5000)
+            await waitFor(element(by.text("Reset password"))).toBeVisible().withTimeout(2000)
             await element(by.text("Reset password")).tap()
             await expect(element(by.text("Token: undefined"))).toBeVisible()
         });
+
+        it('should show test environment variable', async () => {
+            await waitFor(element(by.text("Env Var: kitten"))).toBeVisible().withTimeout(2000)
+        })
     });
 
     describe("when opening from a regular deep link", () => {
@@ -21,7 +25,7 @@ describe("When requesting a password reset", () => {
         });
 
         it('should show token', async () => {
-            await waitFor(element(by.text(`Token: ${token}`))).toBeVisible().withTimeout(5000)
+            await waitFor(element(by.text(`Token: ${token}`))).toBeVisible().withTimeout(2000)
         });
     });
 });
