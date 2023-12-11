@@ -25,7 +25,7 @@ if (IS_DEV) {
 
 const appConfig = {
     "expo": {
-        name: process.env.EXPO_PUBLIC_APP_NAME ?? "EDB DX",
+        name: process.env.EXPO_PUBLIC_APP_NAME ?? "EDB",
         "slug": "expo-detox-branch",
         "version": "1.0.0",
         "orientation": "portrait",
