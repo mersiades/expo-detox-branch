@@ -8,6 +8,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
+    "prebuild": "npx expo prebuild --clean",
     "detox:build:ios:debug": "npx detox build -c ios.sim.debug",
     "detox:test:ios:debug": "npx detox test -c ios.sim.debug",
     "detox:ios:debug": "yarn detox:build:ios:debug && yarn detox:test:ios:debug",
@@ -19,12 +20,15 @@
     "detox:android:debug": "yarn detox:build:android:debug && yarn detox:test:android:debug",
     "detox:build:android:release": "npx detox build -c android.emu.release",
     "detox:test:android:release": "npx detox test -c android.emu.release",
-    "detox:android:release": "yarn detox:build:android:release && yarn detox:test:android:release"
+    "detox:test:android:attached": "npx detox test -c android.att.release",
+    "detox:android:release": "yarn detox:build:android:release && yarn detox:test:android:release",
+    "detox:android:attached": "yarn detox:build:android:release && yarn detox:test:android:attached"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/config-plugins": "~7.2.2",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
     "expo": "~49.0.15",
