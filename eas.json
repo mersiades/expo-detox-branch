@@ -1,0 +1,55 @@
+{
+  "cli": {
+    "version": ">= 5.9.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "releaseChannel": "development",
+      "env": {
+        "EXPO_PUBLIC_TEST_ENV_VAR": "kitten",
+        "EXPO_PUBLIC_APP_NAME": "EDB Dev"
+      }
+    },
+    "simulator": {
+      "extends": "development",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "EDB Sim"
+      }
+    },
+    "emulator": {
+      "extends": "development",
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "EDB Emu"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "releaseChannel": "preview",
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "EDB Prev"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "releaseChannel": "prod",
+      "env": {
+        "EXPO_PUBLIC_TEST_ENV_VAR": "kitten",
+        "EXPO_PUBLIC_APP_NAME": "EDB"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "expo-detox-branch-c0ca4ecc21f2.json",
+        "track": "internal",
+        "releaseStatus": "draft"
+      }
+    }
+  }
+}

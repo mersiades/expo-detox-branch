@@ -40,6 +40,11 @@ const appConfig = {
         ],
         "experiments": {
             "typedRoutes": true
+        },
+        "extra": {
+            "eas": {
+                "projectId": "9faffde7-7f14-4f6a-8b35-03954825d5a0"
+            }
         }
     }
 }

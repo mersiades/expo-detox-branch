@@ -48,3 +48,4 @@ android/
 # Webstorm
 .log*
 *.log
+/expo-detox-branch-c0ca4ecc21f2.json
