@@ -1,5 +1,27 @@
 import withCustomGradleProperties from './plugins/withCustomGradleProperties'
 
+// If APP_VARIANT is undefined, it is a detox build
+const IS_DEV = process.env.APP_VARIANT === 'development';
+const IS_PROD = process.env.APP_VARIANT === 'production';
+
+let scheme;
+let bundleIdentifier
+let androidPackage;
+
+if (IS_DEV) {
+    scheme = 'expodetoxbranch-dev'
+    bundleIdentifier = "com.neonkingkong.expodetoxbranch.dev"
+    androidPackage = "com.neonkingkong.expodetoxbranch.dev"
+} else if (IS_PROD) {
+    scheme = 'expodetoxbranch'
+    bundleIdentifier = "com.neonkingkong.expodetoxbranch"
+    androidPackage = "com.neonkingkong.expodetoxbranch"
+} else {
+    scheme = 'expodetoxbranch-dx'
+    bundleIdentifier = "com.neonkingkong.expodetoxbranch.dx"
+    androidPackage = "com.neonkingkong.expodetoxbranch.dx"
+}
+
 const appConfig = {
     "expo": {
         "name": "expo-detox-branch",
@@ -7,7 +29,7 @@ const appConfig = {
         "version": "1.0.0",
         "orientation": "portrait",
         "icon": "./assets/images/icon.png",
-        "scheme": "expodetoxbranch",
+        scheme,
         "userInterfaceStyle": "automatic",
         "splash": {
             "image": "./assets/images/splash.png",
@@ -19,14 +41,14 @@ const appConfig = {
         ],
         "ios": {
             "supportsTablet": true,
-            "bundleIdentifier": "com.neonkingkong.expodetoxbranch"
+            bundleIdentifier
         },
         "android": {
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
                 "backgroundColor": "#ffffff"
             },
-            "package": "com.neonkingkong.expodetoxbranch"
+            "package": androidPackage
         },
         "web": {
             "bundler": "metro",

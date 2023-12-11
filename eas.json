@@ -8,6 +8,7 @@
       "distribution": "internal",
       "releaseChannel": "development",
       "env": {
+        "APP_VARIANT": "development",
         "EXPO_PUBLIC_TEST_ENV_VAR": "kitten",
         "EXPO_PUBLIC_APP_NAME": "EDB Dev"
       }
@@ -38,6 +39,7 @@
       "autoIncrement": true,
       "releaseChannel": "prod",
       "env": {
+        "APP_VARIANT": "production",
         "EXPO_PUBLIC_TEST_ENV_VAR": "kitten",
         "EXPO_PUBLIC_APP_NAME": "EDB"
       }
