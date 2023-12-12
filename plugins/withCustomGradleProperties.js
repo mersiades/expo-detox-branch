@@ -1,7 +1,7 @@
 const {withGradleProperties} = require('@expo/config-plugins');
 
 /**
- * Use this plugin to customise the gradle.properties file produce by Expo
+ * Use this plugin to customise the gradle.properties file produced by Expo
  * @param {ExpoConfig} config
  * @param {Array<{ key: String, value: String | Number}>} [args] Each key should be a recognised Gradle property.
  * @return {ExpoConfig}
