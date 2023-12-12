@@ -1,8 +1,10 @@
 import {device, element, expect as dExpect, waitFor, by} from 'detox';
+import openApp from "./utils/openApp";
+
 describe("When requesting a password reset", () => {
   describe("with no deep link", () => {
     beforeAll(async () => {
-      await device.launchApp({newInstance: true});
+      await openApp()
     });
 
     it('should show token as undefined', async () => {

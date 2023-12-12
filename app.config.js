@@ -58,8 +58,11 @@ const appConfig = {
         },
         "plugins": [
             "expo-router",
-            "@config-plugins/detox",
-            ["./plugins/withCustomGradleProperties", [{ key: 'org.gradle.jvmargs', value: '-Xmx4096m -XX:MaxMetaspaceSize=512m' }]]
+            ["@config-plugins/detox", {subdomains: '*',}],
+            ["./plugins/withCustomGradleProperties", [{
+                key: 'org.gradle.jvmargs',
+                value: '-Xmx4096m -XX:MaxMetaspaceSize=512m'
+            }]]
         ],
         "experiments": {
             "typedRoutes": true

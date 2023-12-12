@@ -18,12 +18,18 @@ module.exports = {
     'ios.debug': {
       type: 'ios.app',
       binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/EDB.app',
-      build: 'xcodebuild -workspace ios/EDB.xcworkspace -scheme EDB -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build'
+      build: 'xcodebuild -workspace ios/EDB.xcworkspace -scheme EDB -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
+      launchArgs: {
+        buildType: 'debug'
+      }
     },
     'ios.release': {
       type: 'ios.app',
       binaryPath: 'ios/build/Build/Products/Release-iphonesimulator/EDB.app',
-      build: 'xcodebuild -workspace ios/EDB.xcworkspace -scheme EDB -configuration Release -sdk iphonesimulator -derivedDataPath ios/build'
+      build: 'xcodebuild -workspace ios/EDB.xcworkspace -scheme EDB -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
+      launchArgs: {
+        buildType: 'release'
+      }
     },
     'android.debug': {
       type: 'android.apk',
@@ -31,12 +37,18 @@ module.exports = {
       build: 'cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug',
       reversePorts: [
         8081
-      ]
+      ],
+      launchArgs: {
+        buildType: 'debug'
+      }
     },
     'android.release': {
       type: 'android.apk',
       binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
-      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release'
+      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release',
+      launchArgs: {
+        buildType: 'release'
+      }
     }
   },
   devices: {
