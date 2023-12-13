@@ -7,9 +7,9 @@ const ResetPasswordScreen: FC = () => {
   const envVar = process.env.EXPO_PUBLIC_TEST_ENV_VAR
 
   return <View>
-    <Text>Reset Password</Text>
-    <Text>{`Token: ${token}`}</Text>
-    <Text>{`Env Var: ${envVar}`}</Text>
+    <Text style={{ color: 'blue'}}>Reset Password</Text>
+    <Text style={{ color: 'blue'}}>{`Token: ${token}`}</Text>
+    <Text  style={{ color: 'blue'}}>{`Env Var: ${envVar}`}</Text>
   </View>
 }
 

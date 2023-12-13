@@ -1195,6 +1195,11 @@
   dependencies:
     expo-build-properties "~0.8.3"
 
+"@config-plugins/react-native-branch@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@config-plugins/react-native-branch/-/react-native-branch-6.0.0.tgz#86b248ac9af8a64229f0b0129cd5c090562a3ad8"
+  integrity sha512-yIV3weP+VuYippYCYoE5bXwTEE9cUSvtlwI2Gky3wFRT0lS4cXvuAC8+iwtlmdN8CQ0dEXvXDTRvnUAg6P1Ozw==
+
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
@@ -7104,6 +7109,11 @@ react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+
+react-native-branch@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-6.0.0.tgz#a0919623a6b6ae8cfbb87613060ee1fa3026fcf0"
+  integrity sha512-6OWRgwZJpAMGpmF+rTAlN8VdPz7TJspPaIztqEQAzCOXv/1+NomW2ov81piGfeMj5y5ASM9M3oB1Gp7EqITWGQ==
 
 react-native-gesture-handler@~2.12.0:
   version "2.12.1"
