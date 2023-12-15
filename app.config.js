@@ -10,6 +10,7 @@ let apiKey;
 let iosAppDomain
 let associatedDomains
 let iosUniversalLinkDomains
+let host
 
 if (IS_DEV) {
     scheme = 'expodetoxbranch-dev'
@@ -17,14 +18,14 @@ if (IS_DEV) {
     androidPackage = "com.neonkingkong.expodetoxbranch.dev"
     apiKey = process.env.BRANCH_TEST_KEY ?? 'undefined';
     associatedDomains = ['applinks:17p1j.test-app.link', 'applinks:17p1j-alternate.test-app.link'];
-    iosAppDomain = iosUniversalLinkDomains = ['17p1j.test-app.link', '17p1j-alternate.test-app.link'];
+    host = iosAppDomain = iosUniversalLinkDomains = ['17p1j.test-app.link', '17p1j-alternate.test-app.link'];
 } else {
     scheme = 'expodetoxbranch'
     bundleIdentifier = "com.neonkingkong.expodetoxbranch"
     androidPackage = "com.neonkingkong.expodetoxbranch"
     apiKey = process.env.BRANCH_LIVE_KEY ?? 'undefined';
     associatedDomains = ['applinks:17p1j.app.link', 'applinks:17p1j-alternate.app.link'];
-    iosAppDomain = iosUniversalLinkDomains = ['17p1j.app.link', '17p1j-alternate.app.link'];
+    host = iosAppDomain = iosUniversalLinkDomains = ['17p1j.app.link', '17p1j-alternate.app.link'];
 }
 
 const appConfig = {
@@ -49,12 +50,38 @@ const appConfig = {
             bundleIdentifier,
             associatedDomains
         },
-        "android": {
-            "adaptiveIcon": {
+        android: {
+            adaptiveIcon: {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
                 "backgroundColor": "#ffffff"
             },
-            "package": androidPackage
+            package: androidPackage,
+            config: {
+                branch: {
+                    apiKey,
+                },
+            },
+            intentFilters: [
+                // Branch URI scheme
+                {
+                    action: 'VIEW',
+                    category: ['DEFAULT', 'BROWSABLE'],
+                    data: {
+                        scheme,
+                        host: 'open',
+                    },
+                },
+                // Branch app links
+                {
+                    autoVerify: true,
+                    action: 'VIEW',
+                    category: ['DEFAULT', 'BROWSABLE'],
+                    data: {
+                        scheme: 'https',
+                        host,
+                    },
+                },
+            ],
         },
         "web": {
             "bundler": "metro",

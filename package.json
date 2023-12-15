@@ -34,7 +34,11 @@
     "detox:android:debug": "yarn detox:build:android:debug && yarn detox:test:android:debug",
     "detox:android:watch": "yarn detox:build:android:debug && yarn detox:test:android:watch",
     "detox:android:release": "yarn detox:build:android:release && yarn detox:test:android:release",
-    "detox:android:attached": "yarn detox:build:android:release && yarn detox:test:android:attached"
+    "detox:android:attached": "yarn detox:build:android:release && yarn detox:test:android:attached",
+    "install:emu": "eas build:run -p android",
+    "install:sim": "eas build:run -p ios",
+    "open:emu:pixel:30": "emulator -avd Pixel_XL_API_30",
+    "open:emu:pixel:31": "emulator -avd Pixel_XL_API_31"
   },
   "jest": {
     "preset": "jest-expo"
